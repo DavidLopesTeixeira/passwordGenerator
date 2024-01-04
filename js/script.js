@@ -1,6 +1,17 @@
 // seleção de Elementos
-const generatePasswordButton = document.querySelector("#open-generate-password");
+const generatePasswordButton = document.querySelector("#generate-password");
 const generatePasswordElement = document.querySelector("#generated-password");
+
+// Novas funcionalidades
+const openCloseGeneratorButton = document.querySelector(
+  "#open-generate-password"
+);
+const generatePasswordContainer = document.querySelector("#generate-options");
+const lengthInput = document.querySelector("#length");
+const lettersInput = document.querySelector("#letters");
+const numbersInput = document.querySelector("#numbers");
+const symbolsInput = document.querySelector("#symbols");
+const copyPasswordButton = document.querySelector("#copy-password");
 
 // Funções
 const getLetterLowerCase = () => {
@@ -28,23 +39,38 @@ const generatePassword = (
 ) => {
   let password = "";
 
-  const passwordLength = 10;
+  // Segunda Versão
 
-  const generators = [
-    getLetterLowerCase,
-    getLetterUpperCase,
-    getNumber,
-    getSymbol,
-  ];
+  const passwordLength = +lengthInput.value;
 
-  for (let i = 0; i < passwordLength; i = i + 4) {
+  const generators = [];
+
+  if (lettersInput.checked) {
+    generators.push(getLetterLowerCase, getLetterUpperCase);
+  };
+
+  if (numbersInput.checked) {
+    generators.push(getNumber);
+  };
+
+  if (symbolsInput.checked) {
+    generators.push(getSymbol);
+  };
+
+  if (generators.length === 0) {
+    window.alert("Selecione alguma opção para gerar a senha");
+    return;
+  };
+
+  for (let i = 0; i < passwordLength; i = i + generators.length) {
     generators.forEach(() => {
       const randomValue =
         generators[Math.floor(Math.random() * generators.length)]();
 
       password += randomValue;
     });
-  }
+  };
+
   password = password.slice(0, passwordLength);
 
   generatePasswordElement.style.display = "block";
@@ -59,4 +85,8 @@ generatePasswordButton.addEventListener("click", () => {
     getNumber,
     getSymbol
   );
+});
+
+openCloseGeneratorButton.addEventListener("click", () => {
+  generatePasswordContainer.classList.toggle("hide");
 });

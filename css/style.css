@@ -97,6 +97,7 @@ input:focus {
     border: none;
     border-bottom: 1px solid #aaa;
     padding: 0.6rem 0;
+    background-color: transparent;
 }
 
 #open-generate-password {

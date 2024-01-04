@@ -20,12 +20,39 @@ const getSymbol = () => {
     return symbols[Math.floor(Math.random() * symbols.length)];
 };
 
-console.log(getLetterLowerCase());
-console.log(getLetterUpperCase());
-console.log(getNumber());
-console.log(getSymbol());
+const generatePassword = (getLetterLowerCase, getLetterUpperCase, getNumber, getSymbol) => {
+    let password = "";
+
+    const passwordLength = 10;
+
+    const generators = [
+        getLetterLowerCase,
+        getLetterUpperCase,
+        getNumber,
+        getSymbol
+    ]
+
+    for (let i = 0; i < passwordLength; i = i + 4) {
+        generators.forEach(() => {
+
+            const randomValue = 
+            generators[Math.floor(Math.random() * generators.length)]()
+
+            password += randomValue;
+        })
+    }   
+    password = password.slice(0, passwordLength)
+
+    generatePasswordElement.style.display = "block";
+    generatePasswordElement.querySelector("h4").innerText = password;
+};
 
 // Eventos
 generatePasswordButton.addEventListener("click", () => {
-    console.log("funfou");
+    generatePassword(
+        getLetterLowerCase,
+        getLetterUpperCase,
+        getNumber,
+        getSymbol
+    );
 });

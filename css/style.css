@@ -227,6 +227,7 @@ input:focus {
 
     #register-form {
         width: 70%;
+        padding: 0.5rem;
     }
 
 }
@@ -258,6 +259,7 @@ input:focus {
 
     #register-form {
         width: 60%;
+        padding: 1rem;
     }
 
     #register-form input[type="submit"],

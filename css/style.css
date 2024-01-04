@@ -6,7 +6,7 @@
     color: #333;
 }
 
-html, 
+html,
 body {
     height: auto;
     min-height: 100vh;
@@ -26,7 +26,7 @@ input:focus {
     margin: 2rem auto;
     display: flex;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
-    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+        rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
 #register-banner {
@@ -37,7 +37,7 @@ input:focus {
 }
 
 #banner-layer {
-    background-color: rgba(25, 11, 122, 0.7) ;
+    background-color: rgba(25, 11, 122, 0.7);
     height: 100%;
     padding: 2rem;
     display: flex;
@@ -48,7 +48,7 @@ input:focus {
     font-size: 4rem;
     word-spacing: 50rem;
     margin-bottom: 1.5rem;
-    color: #fff;   
+    color: #fff;
 }
 
 #register-form {
@@ -116,7 +116,7 @@ input:focus {
     margin-bottom: 0.5rem;
 }
 
-#register-form  input[type="submit"],
+#register-form input[type="submit"],
 #generate-options button,
 #copy-password {
     background-color: #81d340;
@@ -128,10 +128,10 @@ input:focus {
     max-width: 150px;
     cursor: pointer;
     align-self: flex-end;
-    transition: 0.5s;   
+    transition: 0.5s;
 }
 
-#register-form  input[type="submit"]:hover {
+#register-form input[type="submit"]:hover {
     opacity: 1;
     transform: scale(1.1);
 }
@@ -183,4 +183,68 @@ input:focus {
 
 .hide {
     display: none;
+}
+
+@media screen and (max-width: 767px) {
+    html {
+        background: #333;
+    }
+
+    html,
+    body {
+        height: auto;
+        min-height: 100vh;
+    }
+
+    #register-banner h1 {
+        display: none;
+    }
+
+    #register-container {
+        min-height: 100vh;
+
+        width: 100vw;
+        margin: 0;
+    }
+
+    #register-banner {
+        width: 30vw;
+    }
+
+    #register-form {
+        width: 70%;
+    }
+
+}
+
+
+@media screen and (min-width: 767px) and (max-width: 1023px) {
+    html {
+        background: #fff;
+    }
+
+    #register-banner h1 {
+        display: none;
+    }
+
+    #register-container {
+        min-height: 100vh;
+
+        width: 100vw;
+        margin: 0;
+    }
+
+    #register-banner {
+        width: 40vw;
+    }
+
+    #register-form {
+        width: 60%;
+    }
+
+    #register-form input[type="submit"],
+    #generate-options button,
+    #copy-password {
+        align-self: center;
+    }
 }

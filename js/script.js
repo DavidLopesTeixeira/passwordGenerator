@@ -1,8 +1,6 @@
 // seleção de Elementos
 const generatePasswordButton = document.querySelector("#generate-password");
 const generatePasswordElement = document.querySelector("#generated-password");
-
-// Novas funcionalidades
 const openCloseGeneratorButton = document.querySelector(
   "#open-generate-password"
 );

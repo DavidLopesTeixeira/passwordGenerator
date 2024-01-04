@@ -41,15 +41,25 @@ input:focus {
     height: 100%;
     padding: 2rem;
     display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
-#register-banner h1 {
+#register-banner h1{
     font-size: 4rem;
     word-spacing: 50rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
     color: #fff;
 }
+
+#register-banner h2{
+    font-size: 3rem;
+    word-spacing: 50rem;
+    margin-bottom: 0.5rem;
+    color: #0099ff;
+}
+
 
 #register-form {
     background-color: #fdfdfd;
@@ -187,7 +197,7 @@ input:focus {
 
 @media screen and (max-width: 767px) {
     html {
-        background: #333;
+        background: transparent;
     }
 
     html,
@@ -197,8 +207,12 @@ input:focus {
     }
 
     #register-banner h1 {
-        display: none;
+        font-size: 1.1rem;
     }
+
+    #register-banner h2{
+        font-size: 0.9rem;
+     }
 
     #register-container {
         min-height: 100vh;
@@ -220,11 +234,15 @@ input:focus {
 
 @media screen and (min-width: 767px) and (max-width: 1023px) {
     html {
-        background: #fff;
+        background: transparent;
     }
 
     #register-banner h1 {
-        display: none;
+        font-size: 3rem;
+    }
+
+    #register-banner h2{
+        font-size: 1.8rem;
     }
 
     #register-container {

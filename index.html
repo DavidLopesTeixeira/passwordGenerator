@@ -33,8 +33,8 @@
                 <label for="password">Senha</label>
                 <input type="password" name="password" id="password" placeholder="Digite sua senha">
             </div>
-            <p>Quer ajuda para criar uma senha segura? <span id="generate-password">Clique aqui.</span></p>
-            <div id="generate-options">
+            <p>Quer ajuda para criar uma senha segura? <span id="open-generate-password">Clique aqui.</span></p>
+            <div id="generate-options" class="hide">
                 <p>Selecione as opções que você deseja</p>
                 <div class="form-control">
                     <label for="length">Quantidade de caracteres:</label>
@@ -52,6 +52,7 @@
                     <label for="symbols">Símbolos:</label>
                     <input type="checkbox" name="symbols" id="symbols" checked>
                 </div>
+                <button id="generate-password">Criar senha</button>
             </div>
             <div id="generated-password">
                 <p>Aqui está a sua senha:</p>
